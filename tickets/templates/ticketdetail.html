@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-2 col-sm-3 text-center">
+            <a class="ticket-img" href="#">
+                <img src="/media/img/image.jpg" class="img-circle"></img>
+            </a>
+            <p><span class="boldtext">User:</span> TBA </p>
+        </div>
+        <div class="col-sm-10 col-md-9">
+            {% if ticket.image %}
+                <img class="img-ticket" src="/media/ {{ ticket.image }}"></img>
+            {% endif %}
+            <h3>{{ ticket.user_type }}</h3>
+            <div class="row">
+                    <div class="col-xs-9">
+                        <p>{{ ticket.issue_name }}</p>
+                        <p>{{ ticket.status }}</p>
+                        <p>{{ ticket.urgent }}</p>
+                        <p>{{ ticket.due_date }}</p>
+                        <p>{{ ticket.detail }}</p>
+                        <p><span class="boldtext">Published on:</span>{{ ticket.published_date }}</p>
+                        <p><span class="boldtext">Views:</span>{{ ticket.views }}</p>
+                        <p><span class="boldtext">Tag:</span>{{ ticket.tag }}</p>
+                        <a href="{% url 'tickets' %}" class="btn btn-default">Back to Tickets</a>
+                        <a href="{% url 'edit_ticket' ticket.id %}" class="btn btn-default">Edit Ticket</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+{% endblock %}

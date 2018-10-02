@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for ticket in tickets %}
+        <div class="row">
+            <div class="col-md-2 col-sm-3 text-center">
+                <a class="ticket-img" href="#">
+                    <img src="/media/img/image.jpg" class="img-circle"></img>
+                </a>
+                <p><span class="boldtext">User:</span>TBA</p>
+            </div>
+            <div class="col-md-10 col-sm-9">
+                <h3>{{ ticket.issue_type }}</h3>
+                <div class="row">
+                    <div class="col-xs-9">
+                        <p><span class="boldtext"></span>{{ ticket.issue_name }}</p>
+                        <p><span class="boldtext"></span>{{ ticket.status }}</p>
+                        <p><span class="boldtext"></span>{{ ticket.urgent }}</p>
+                        <p><span class="boldtext"></span>{{ ticket.due_date }}</p>
+                        <p>{{ ticket.detail|truncatewords:30 }}</p>
+                        <p><a href="{% url 'ticket_detail' ticket.id %}" class="btn btn-default">Read More</a></p>
+                        <p><span class="boldtext">Published on:</span>{{ ticket.published_date }}</p>
+                        <p><span class="boldtext">Views:</span>{{ ticket.views }}</p>
+                        <p><span class="boldtext">Tag:</span>{{ ticket.tag }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% endblock %}
