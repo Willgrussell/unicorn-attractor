@@ -1,6 +1,7 @@
 {% load static from staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,22 @@
     <title>Unicorn Attractor Web App</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}" type="text/css" />
     <!-- Latest compiled and minified JavaScript -->
-    <link rel="icon" href="{% static 'img/logo.jpg' %}" type="image" sizes="16x16">
+    <link rel="icon" href="{% static 'img/logo.jpg' %}" type="image/jpeg" sizes="16x16">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_iYG3aifOKYYJxrXwemaZb");
+        })();
+    </script>
 </head>
+
 <body>
     <!-- Fixed masthead -->
     <nav class="navbar navbar-masthead navbar-default navbar-fixed-top">
@@ -31,11 +41,11 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     {% if user.is_authenticated %}
-                        <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i>Profile</a></li>
-                        <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i>Log Out</a></li>
-                    {%  else %}
-                        <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i>Register</a></li>
-                        <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i>Log In</a></li>
+                    <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i>Profile</a></li>
+                    <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i>Log Out</a></li>
+                    {% else %}
+                    <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i>Register</a></li>
+                    <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i>Log In</a></li>
                     {% endif %}
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -48,7 +58,7 @@
             </div>
         </div>
     </nav>
-    {% if messages %}
+    <hr> {% if messages %}
     <div>{% for message in messages %} {{ message }} {% endfor %}</div>
     {% endif %}
     <div id="masthead">
@@ -74,11 +84,34 @@
             </div>
         </div>
     </div>
-    <footer>
-        <div class="container">
-            <p>Made by William Russell</p>
+    <footer class="container-fluid ">
+        <div class="row ">
+            <div class="col-sm-4 ">
+                <h5 class="">About</h5>
+                <p class="inline-block ">
+                    Written by William Russell
+                </p>
+            </div>
+            <div class="col-sm-4 ">
+                <h5 class="">Search</h5>
+                <p class="inline-block ">
+                    Could be the search app for database??
+                </p>
+            </div>
+            <div class="col-sm-4 ">
+                <h5 class="">Social Links</h5>
+                <ul class="list-inline social-links ">
+                    <li><a target="_blank " href="# "><i class="fa fa-facebook "></i></a></li>
+                    <li><a target="_blank " href="# "><i class="fa fa-twitter "></i></a></li>
+                    <li><a target="_blank " href="# "><i class="fa fa-linkedin "></i></a></li>
+                    <li><a target="_blank " href="# "><i class="fa fa-pinterest "></i></a></li>
+                    <li><a target="_blank " href="# "><i class="fa fa-instagram "></i></a></li>
+                    <li><a target="_blank " href="# "><i class="fa fa-youtube "></i></a></li>
+                </ul>
+            </div>
         </div>
     </footer>
+    <script type="text/javascript" src="{% static 'js/sendEmail.js' %}"></script>
 </body>
 
 </html>

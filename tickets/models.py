@@ -5,8 +5,8 @@ from django.utils import timezone
 class Ticket(models.Model):
     """A single ticket release"""
     ISSUE_TYPE_CHOICES = (
-        ('B', 'Bug'),
-        ('F', 'Feature')
+        ('Bug', 'Bug'),
+        ('Feature', 'Feature')
         )
     issue_type = models.CharField(
         max_length=7,
@@ -16,12 +16,12 @@ class Ticket(models.Model):
     issue_name = models.CharField(max_length=254, default='')
     issue_detail = models.TextField()
     STATUS_CHOICES = (
-        ('TD', 'ToDo'),
-        ('DG', 'Doing'),
-        ('DN', 'Done')
+        ('todo', 'ToDo'),
+        ('doing', 'Doing'),
+        ('done', 'Done')
         )
     status = models.CharField(
-        max_length=2,
+        max_length=5,
         choices=STATUS_CHOICES,
         default="ToDo",
     )

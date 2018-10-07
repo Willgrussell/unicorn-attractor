@@ -1,4 +1,27 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
+<section class="container-fluid ">
+    <div class="row">
+        <div>
+            <h3 class="uppercase text-center">Message Me!</h3>
+            <h5 class="uppercase text-center">Quick contact, we will endevour to respond within 24 hours</h5>
+        </div>
+        <div class="center-form">
+            <fieldset>
+                <legend>Contact Form</legend>
+                <form onsubmit="return sendMail(this);" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
+                    <input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
+                    <select class="form-control" name="issuetype" id="issuetype">
+                        <option value="" disabled selected>Select Issue Type</option>
+                        <option value="bug">Bug</option>
+                        <option value="feature">Feature</option>
+                    </select>
+                    <textarea rows="5" name="issuesummary" class="form-control" id="issuesummary" placeholder="Issue Description" required></textarea>
+                    <button type="submit" class="btn btn-primary center-block">Send Issue</button>
+            </fieldset>
+            </form>
+        </div>
+    </div>
+</section>
 {% endblock %}
