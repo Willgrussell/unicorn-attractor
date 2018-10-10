@@ -11,7 +11,7 @@ footer {
     margin-top: 40px;
     padding-top: 40px;
     padding-bottom: 40px;
-    background-color: #ededed;
+    background-color: #AAF0EE;
 }
 
 h1, h1 a {
@@ -123,6 +123,18 @@ a, a:hover {
 .boldtext{
     font-weight: bold;
 }
+/*About Page*/
+.aboutTitle{
+    text-align: center;
+}
+
+.about{
+    background-color: #AAF0EE;
+    margin:2px;
+}
+
+/*Home page*/
+
 
 @media screen and (min-width: 768px) {
     #masthead h1 {
