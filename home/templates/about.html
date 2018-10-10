@@ -1,4 +1,71 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static from staticfiles %} {% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="aboutWe col-sm">
+            <h3>Unicorn Attractor was established in 2018 with the goal of pursuing and developing issue tracking to its full potential.</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="imageWe col-sm-4">
+            <img src="{% static 'img/man-with-laptop.jpeg' %}" class="img-responsive" alt="image of laptop"></img>
+            <div class="caption">
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
+        <div class="imageWe col-sm-4">
+            <img src="{% static 'img/code.jpeg' %}" class="img-responsive" alt="image of designer"></img>
+            <div class="caption">
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
+        <div class="imageWe col-sm-4">
+            <img src="{% static 'img/tracker.png' %}" class="img-responsive" alt="image of computer"></img>
+            <div class="caption">
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="about col-sm-6">
+            <h4 class="aboutTitle">Our Commitment</h4>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+            magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+            quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+            ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+            dolor in hendrerit in vulputate velit esse molestie consequat,
+            vel illum dolore eu feugiat nulla facilisis at vero eros et
+            accumsan et iusto odio dignissim qui blandit praesent luptatum
+            zzril delenit augue duis dolore te feugait nulla facilisi.
+           </p>
+        </div>
+        <div class="about col-sm-4">
+            <h4 class="aboutTitle">Awards</h4>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+            magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+            quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+            ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+            dolor in hendrerit in vulputate velit esse molestie consequat,
+            vel illum dolore eu feugiat nulla facilisis at vero eros et
+            accumsan et iusto odio dignissim qui blandit praesent luptatum
+            zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+        </div>
+    </div>
+</div>
 
-{% block content %}
 {% endblock %}

@@ -1,5 +1,8 @@
-{% extends 'base.html' %}
-{% block content %}
-<h3>Welcome to Unicorn Attractor web application</h3>
-<p>I hope you enjoy this application that uses django and utilising SQlite3 backend database. More to be done.</p>
+{% extends 'base.html' %} {% load static from staticfiles %} {% block content %}
+<div class="jumbotron">
+    <h1>Welcome to Unicorn Attractor web application</h1>
+    <p>I hope you enjoy this application that uses django and utilising SQlite3 backend database. More to be done.</p>
+    <p>Press the button to show all tickets within this database!</p>
+    <button class="btn btn-success btn-lg center-block"><a href="{% url 'tickets' %}"><i class="fa fa-database"></i> Click me</a></button>
+</div>
 {% endblock %}

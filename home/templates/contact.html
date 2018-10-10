@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% load static from staticfiles %} {% block content %}
 <section class="container-fluid ">
     <div class="row">
         <div>
@@ -18,7 +18,7 @@
                         <option value="feature">Feature</option>
                     </select>
                     <textarea rows="5" name="issuesummary" class="form-control" id="issuesummary" placeholder="Issue Description" required></textarea>
-                    <button type="submit" class="btn btn-primary center-block">Send Issue</button>
+                    <button type="submit" class="btn btn-success center-block">Send Issue</button>
             </fieldset>
             </form>
         </div>
