@@ -22,6 +22,7 @@ from home import urls as urls_home
 from home.views import index
 from tickets import urls as urls_tickets
 from tickets.views import all_tickets
+from search import urls as urls_search
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -29,5 +30,6 @@ urlpatterns = [
     url(r'^accounts/', include(urls_accounts)),
     url(r'^home/', include(urls_home)),
     url(r'^tickets/', include(urls_tickets)),
+    url(r'^search/', include(urls_search)),
     url(r'^media/(?P<path>.*)$', static.serve,{'document_root': MEDIA_ROOT}),
 ]

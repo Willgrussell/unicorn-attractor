@@ -87,9 +87,14 @@
                 <p class="inline-block ">Written by William Russell</p>
                 <p class="inline-block">Willson copyright - All rights reserved</p>
             </div>
-            <div class="col-sm-4 ">
-                <h5 class="">Search</h5>
-                <p class="inline-block "></p>Could be the search app for database??</p>
+            <div class="container col-sm-4 ">
+                <div class="display">
+                    <form action="{% url 'search' %}" method="GET">
+                        <i class="fa fa-search"></i>
+                        <input type="text" name="q" placeholder="Search ticket by issue type"/>
+                        <button class="btn btn-md btn-default" type="submit">Search</button>
+                    </form>
+                </div>
             </div>
             <div class="col-sm-4 ">
                 <h5 class="">Social Links</h5>
