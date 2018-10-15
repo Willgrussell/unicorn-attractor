@@ -10,6 +10,7 @@ class TicketForm(forms.ModelForm):
                     'status',
                     'due_date',
                     'urgent',
+                    'price',
                     'published_date', 
                     'image',
                     'tag')

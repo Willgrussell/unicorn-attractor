@@ -16,6 +16,7 @@
                         <p><span class="boldtext"></span>{{ ticket.status }}</p>
                         <p><span class="boldtext"></span>{{ ticket.urgent }}</p>
                         <p><span class="boldtext"></span>{{ ticket.due_date }}</p>
+                        <p><span class="glyphicon glyphicon-euro"></span>{{ ticket.price }}</p>
                         <p>{{ ticket.detail|truncatewords:30 }}</p>
                         <p><a href="{% url 'ticket_detail' ticket.id %}" class="btn btn-default">Read More</a></p>
                         <p><span class="boldtext">Published on:</span>{{ ticket.published_date }}</p>

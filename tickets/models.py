@@ -27,6 +27,7 @@ class Ticket(models.Model):
     )
     due_date = models.DateField(default=timezone.now)
     urgent = models.BooleanField()
+    price = models.DecimalField(max_digits=6, decimal_places=2, default=0)
     published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     views = models.IntegerField(default=0)
     image = models.ImageField(upload_to='img', blank=True, null=True)
