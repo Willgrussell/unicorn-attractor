@@ -28,7 +28,7 @@ Images of design / layout of application, with drawings of project layout.
 * [Django](https://www.djangoproject.com) - The main project boilerplate
 * [Bootstrap](http://getbootstrap.com) - Template layout and responsiveness with different devices
 * [FontAwesome](https://fontawesome.com/?from=io) - Added icons to help users spot functions on webpage.
-* [FusionCharts](https://www.fusioncharts.com) - Third party software to assist database information to deply charts to template / browser.
+* [HighCharts](https://www.highcharts.com) - Third party software to assist database information to deply charts to template / browser.
 * [SQL3lite](https://www.sqlite.org/index.html) - Backend Database for ticket information.
 * [Pillow](https://pillow.readthedocs.io/en/5.3.x/) - Python library to assist with images used.
 * [Django-forms-bootstrap]() - Python library to format layout for forms.

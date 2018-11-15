@@ -33,6 +33,7 @@ class Ticket(models.Model):
     image = models.ImageField(upload_to='img', blank=True, null=True)
     tag = models.CharField(max_length=30, blank=True, null=True)
     
-    def __unicode__(self):
+    def __str__(self):
         return self.issue_type
+
     

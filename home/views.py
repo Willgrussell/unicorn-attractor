@@ -12,7 +12,3 @@ def contact(request):
 def about(request):
     """A view that displays an about us page"""
     return render(request, "about.html")
-    
-def promotion(request):
-    """A view that will display any promotion i choose to display"""
-    return render(request, "promotions.html")

@@ -1,32 +1,46 @@
-{% extends 'base.html' %}
-{% block content %}
-    <div class="row">
-        <div class="col-md-2 col-sm-3 text-center">
-            <a class="ticket-img" href="#">
-                <img src="/media/img/image.jpg" class="img-circle"></img>
-            </a>
-            <p><span class="boldtext">User:</span> TBA </p>
-        </div>
-        <div class="col-sm-10 col-md-9">
-            {% if ticket.image %}
-                <img class="img-ticket" src="/media/ {{ ticket.image }}"></img>
-            {% endif %}
-            <h3>{{ ticket.user_type }}</h3>
-            <div class="row">
-                    <div class="col-xs-9">
-                        <p>{{ ticket.issue_name }}</p>
-                        <p>{{ ticket.status }}</p>
-                        <p>{{ ticket.urgent }}</p>
-                        <p>{{ ticket.due_date }}</p>
-                        <p>{{ ticket.issue_detail }}</p>
-                        <p><span class="glyphicon glyphicon-euro"{{ ticket.price }}</p>
-                        <p><span class="boldtext">Published on:</span>{{ ticket.published_date }}</p>
-                        <p><span class="boldtext">Views:</span>{{ ticket.views }}</p>
-                        <p><span class="boldtext">Tag:</span>{{ ticket.tag }}</p>
-                        <a href="{% url 'tickets' %}" class="btn btn-default">Back to Tickets</a>
-                        <a href="{% url 'edit_ticket' ticket.id %}" class="btn btn-default">Edit Ticket</a>
+{% extends 'base.html' %} {% block content %}
+<div class="row">
+    <div class="col-sm-3 col-md-2 text-center">
+        <a class="ticket-img" href="#">
+            <img src="/media/img/image.jpg" class="img-circle"></img>
+        </a>
+        <p><span class="boldtext">User: </span> {{ user.email }}</p>
+    </div>
+    <div class="col-sm-10 col-md-9">
+        {% if ticket.image %}
+        <img class="img-ticket" src="/media/ {{ ticket.image }}"></img>
+        {% endif %}
+        <div class="col-sm-8 col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                   <h3 class="panel-title"><span class="boldtext">Type: </span> {{ ticket.issue_type }}</h3> 
+                </div>
+                <div class="panel-body">
+                    <p><span class="boldtext">Name: </span> {{ ticket.issue_name }}</p>
+                    <p><span class="boldtext">Status: </span> {{ ticket.status }}</p>
+                    <p><span class="boldtext">Urgent: </span> {{ ticket.urgent }}</p>
+                    <p><span class="boldtext">Due Date: </span> {{ ticket.due_date }}</p>
+                    <p><span class="boldtext">Detail: </span> {{ ticket.issue_detail }}</p>
+                    <p><span class="boldtext">Published on: </span> {{ ticket.published_date }}</p>
+                    <p><span class="boldtext">Views: </span> {{ ticket.views }}</p>
+                    <p><span class="boldtext">Tag: </span> {{ ticket.tag }}</p>
+                    <p><span class="glyphicon glyphicon-euro"</span> {{ ticket.price }}</p>
+                    <form method="post" action="{% url 'add_to_cart' ticket.id %}">
+                    {% csrf_token %}
+                        <div class="col-xs-12 input-group">
+                            <input name='quantity' type="number" min="1" max="999" class="form-control" placeholder="Hours">
+                            <span class="input-group-btn">
+                                <button class="btn btn-success" type="submit"><span class="glyphicon-glyphicon-plus"></span> Add To Cart</button>
+                            </span>
+                        </div>
+                    </form>
+                    <div class="panel-footer">
+                        <a href="{% url 'tickets' %}" class="btn btn-info" role="button"><i class="fa fa-arrow-left"></i> Tickets</a>
+                        <a href="{% url 'edit_ticket' ticket.id %}" class="btn btn-warning" role="button"><i class="fa fa-edit"></i> Edit Ticket</a>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
+</div>
 {% endblock %}

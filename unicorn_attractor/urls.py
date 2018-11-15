@@ -24,6 +24,8 @@ from tickets import urls as urls_tickets
 from tickets.views import all_tickets
 from search import urls as urls_search
 from cart import urls as urls_cart
+from checkout import urls as urls_checkout
+from promotions import urls as urls_promotion
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -33,5 +35,7 @@ urlpatterns = [
     url(r'^tickets/', include(urls_tickets)),
     url(r'^search/', include(urls_search)),
     url(r'^cart/', include(urls_cart)),
+    url(r'^checkout/', include(urls_checkout)),
+    url(r'^promotion/', include(urls_promotion)),
     url(r'^media/(?P<path>.*)$', static.serve,{'document_root': MEDIA_ROOT}),
 ]

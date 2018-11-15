@@ -6,7 +6,7 @@ def view_cart(request):
     return render(request, 'cart.html')
     
 def add_to_cart(request, id):
-    """ Add a quantity of the ticket to the cart """
+    """ Add a quantity of hours for an edited ticket to the cart """
     quantity=int(request.POST.get('quantity'))
     
     cart = request.session.get('cart', {})
