@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div id="issue" data-url="{% url 'issue_chart' %}"></div>
+        </div>
+        <div class="col-sm-6">
+            <div id="status" data-url="{% url 'status_chart' %}"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div id="urgent" data-url="{% url 'urgent_chart' %}"></div>
+        </div>
+        <div class="col-sm-6">
+            <div id="noturgent" data-url="{% url 'not_urgent_chart' %}"></div>
+        </div>
+    </div>
+</div>
+ 
+{% endblock %}
