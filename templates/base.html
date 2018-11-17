@@ -14,7 +14,6 @@
     <link rel="icon" href="{% static 'img/logo.jpg' %}" type="image/jpeg" sizes="16x16">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
     <script type="text/javascript" src="https://code.highcharts.com/highcharts.src.js"></script>
     <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
     <script type="text/javascript">
@@ -22,6 +21,8 @@
             emailjs.init("user_iYG3aifOKYYJxrXwemaZb");
         })();
     </script>
+    {% block head_js %}
+    {% endblock head_js %}
 </head>
 
 <body>
@@ -76,15 +77,6 @@
             </div>
         </div>
     </div>
-    <!--<div class="container">-->
-    <!--    <div class="row">-->
-    <!--        <div class="col-sm-4">-->
-    <!--            <ul>-->
-    <!--                <li></li>-->
-    <!--            </ul>-->
-    <!--        </div>-->
-    <!--    </div>-->
-    <!--</div>-->
 
     <div class="container">
         <div class="row">
