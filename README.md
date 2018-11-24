@@ -53,8 +53,11 @@ Testing has been completed across this web app using the below methods.
 - Download files from respository with requirements.txt which will have libraries used on project.
 - From CLI `python3 manage.py runserver`.
 
-### Hosting - web application has been hosted on **Heroku**.
-- Environmental variables have been used to ensure security across site.
+### Hosting - web application has been hosted on **Heroku** and use of **AWS**
+- Created app using Heroku on web and add Herokupostgres database
+- Changes to config vars on Heroku, include environmental variables have been used to secure application.
+- Install on CLI `dj-database-url` and `psycopg2` update requirements.txt
+- Create Procfile to allow `Heroku` know this is a django application
 
 ## Credits
 ### Contents
