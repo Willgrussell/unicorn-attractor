@@ -16,7 +16,7 @@ class TicketTests(TestCase):
     def test_ticket_creation(self):
         t = self.create_ticket()
         self.assertTrue(isinstance(t, Ticket))
-        self.assertEqual(t.__unicode__(), t.issue_type)
+        self.assertEqual(t.issue_type)
         
 # Forms test
         
