@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% load static from staticfiles %} {% block content %}
 <div class="row">
     <div class="col-sm-3 col-md-2 text-center">
         <a class="ticket-img" href="#">
@@ -8,7 +8,7 @@
     </div>
     <div class="col-sm-10 col-md-9">
         {% if ticket.image %}
-        <img class="img-ticket" src="/media/ {{ ticket.image }}"></img>
+        <img class="img-ticket" src="{{ MEDIA_URL }}{{ ticket.image }}"></img>
         {% endif %}
         <div class="col-sm-8 col-md-6">
             <div class="panel panel-primary">
