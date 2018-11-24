@@ -120,7 +120,7 @@ def not_urgent_chart(request):
     }
     chart = {
         'chart': {'type': 'bar'},
-        'title': {'text': 'Ticket Urgency by Type'},
+        'title': {'text': 'Ticket Non-Urgency by Type'},
         'renderTo': 'Not Urgent',
         'xAxis': {'categories': categories},
         'series': [not_urgent_series]

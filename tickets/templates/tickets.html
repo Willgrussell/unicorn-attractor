@@ -1,32 +1,29 @@
-{% extends 'base.html' %}
-{% block content %}
-    {% for ticket in tickets %}
-        <div class="row">
-            <div class="col-md-2 col-sm-3 text-center">
-                <a class="ticket-img" href="#">
-                    <img src="/media/img/image.jpg" class="img-circle"></img>
-                </a>
-                <p><span class="boldtext">User:</span> {{ user.email }}</p>
+{% extends 'base.html' %} {% block content %} {% for ticket in tickets %}
+<div class="row">
+    <div class="col-md-2 col-sm-3 text-center">
+        <a class="ticket-img" href="#">
+            <img src="/media/img/image.jpg" class="img-circle"></img>
+        </a>
+        <p><span class="boldtext">User:</span> {{ user.email }}</p>
+    </div>
+    <div class="col-sm-2 col-md-4 text-center">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"><span class="boldtext">Type: </span> {{ ticket.issue_type }}</h3>
             </div>
-            <div class="col-sm-4 col-md-6 text-center">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                       <h3 class="panel-title"><span class="boldtext">Type: </span> {{ ticket.issue_type }}</h3> 
-                    </div>
-                    <div class="panel-body">
-                        <p><span class="boldtext">Issue: </span> {{ ticket.issue_name }}</p>
-                        <p><span class="boldtext">Status: </span> {{ ticket.status }}</p>
-                        <p><span class="boldtext">Urgent: </span> {{ ticket.urgent }}</p>
-                        <p><span class="boldtext">Due Date: </span> {{ ticket.due_date }}</p>
-                        <p><span class="glyphicon glyphicon-euro"></span> {{ ticket.price }}</p>
-                        <p> {{ ticket.detail|truncatewords:30 }} </p>
-                        <p><a href="{% url 'ticket_detail' ticket.id %}" class="btn btn-info" role="button"><i class="fab fa-readme"></i> Read More</a></p>
-                        <p><span class="boldtext">Published on: </span> {{ ticket.published_date }}</p>
-                        <p><span class="boldtext">Views: </span> {{ ticket.views }}</p>
-                        <p><span class="boldtext">Tag: </span> {{ ticket.tag }}</p>
-                    </div>
-                </div>
+            <div class="panel-body">
+                <p><span class="boldtext">Issue: </span> {{ ticket.issue_name }}</p>
+                <p><span class="boldtext">Status: </span> {{ ticket.status }}</p>
+                <p><span class="boldtext">Urgent: </span> {{ ticket.urgent }}</p>
+                <p><span class="boldtext">Due Date: </span> {{ ticket.due_date }}</p>
+                <p><span class="glyphicon glyphicon-euro"></span> {{ ticket.price }}</p>
+                <p> {{ ticket.detail|truncatewords:30 }} </p>
+                <p><a href="{% url 'ticket_detail' ticket.id %}" class="btn btn-info" role="button"><i class="fab fa-readme"></i> Read More</a></p>
+                <p><span class="boldtext">Published on: </span> {{ ticket.published_date }}</p>
+                <p><span class="boldtext">Views: </span> {{ ticket.views }}</p>
+                <p><span class="boldtext">Tag: </span> {{ ticket.tag }}</p>
             </div>
         </div>
-        {% endfor %}
-    {% endblock %}
+    </div>
+</div>
+{% endfor %} {% endblock %}

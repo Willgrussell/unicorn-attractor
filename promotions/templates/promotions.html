@@ -1,21 +1,53 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-sm-6">
-            <div id="issue" data-url="{% url 'issue_chart' %}"></div>
-        </div>
-        <div class="col-sm-6">
-            <div id="status" data-url="{% url 'status_chart' %}"></div>
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Look Look Look at my promotions page</h3>
+                </div>
+                <div class="panel-body">
+                    <p>Welcome to this promotions page, this page showcases some wonderful charts that displays live data from this database. Please add to the database and see what we can acheive in time.</p>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
+            <div id="issue" data-url="{% url 'issue_chart' %}"></div>
+        </div>
+        <div class="col-sm-4">
+            <div id="status" data-url="{% url 'status_chart' %}"></div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Issue By Type Pie Chart</h3>
+                    <p>This chart displays live total by ticket issue type of either a bug or feature.</p>
+                    <h3>Ticket Status Pie Chart</h3>
+                    <p>This chart displays the total of status type on each ticket.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
             <div id="urgent" data-url="{% url 'urgent_chart' %}"></div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <div id="noturgent" data-url="{% url 'not_urgent_chart' %}"></div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Ticket Urgency Column Chart</h3>
+                    <p>This chart is displays total tickets that are urgent and split by bug or feature</p>
+                    <h3>Ticket Urgency Bar Chart</h3>
+                    <p>This chart is displays total tickets that are not urgent and split by bug or feature</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
- 
+
 {% endblock %}

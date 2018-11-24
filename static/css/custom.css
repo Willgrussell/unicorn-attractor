@@ -9,9 +9,14 @@ body {
 
 footer {
     margin-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #12AB82;
+}
+/*Display container for search box*/
+.display {
     padding-top: 40px;
     padding-bottom: 40px;
-    background-color: #AAF0EE;
 }
 
 h1, h1 a {
@@ -28,11 +33,16 @@ h1, h1 a {
     font-size: 55px;
     line-height: 1;
     margin-top: 50px;
+    color: #12AB82;
 }
 
 #masthead .well{
     margin-top: 31px;
     min-height: 127px;
+}
+
+#logo {
+    color: #FF8000;
 }
 
 .navbar.affix {
@@ -45,18 +55,13 @@ h1, h1 a {
     padding: 10px 10px;
 }
 
-
-#logo {
-    color: #12AB82;
-}
-
 .ticket-img {
     margin-top: 25%;
     display: block;
 }
 
 a, a:hover {
-    color: #223344;
+    color: #FF8000;
     text-decoration: none;
 }
 
