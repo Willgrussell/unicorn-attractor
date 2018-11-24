@@ -9,14 +9,9 @@ class TicketTests(TestCase):
     """
     Here we will define the tests that will run against the Ticket models
     """
-    def create_ticket(self, issue_type="Bug", issue_name="Test", issue_detail="Large", status="Doing",
-                            urgent="True"):
-                                return Ticket.objects.create(issue_type=issue_type, issue_name=issue_name, issue_detail=issue_detail, status=status, urgent=True)
-
-    def test_ticket_creation(self):
-        t = self.create_ticket()
-        self.assertTrue(isinstance(t, Ticket))
-        self.assertEqual(t.issue_type)
+    def test_str(self):
+        test_issue_name = Ticket(issue_name='issue with site')
+        self.assertEqual(str(test_issue_name), 'issue with site')
         
 # Forms test
         
