@@ -11,7 +11,7 @@ class Ticket(models.Model):
     issue_type = models.CharField(
         max_length=7,
         choices=ISSUE_TYPE_CHOICES,
-        default="Bug",
+        default='Bug',
     )
     issue_name = models.CharField(max_length=254, default='')
     issue_detail = models.TextField()
@@ -34,6 +34,6 @@ class Ticket(models.Model):
     tag = models.CharField(max_length=30, blank=True, null=True)
     
     def __str__(self):
-        return self.issue_type
+        return self.issue_name
 
     

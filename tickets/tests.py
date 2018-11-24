@@ -1,6 +1,5 @@
 from django.test import TestCase
 from .models import Ticket
-from .forms import TicketForm
 
 # Create your tests here
 
