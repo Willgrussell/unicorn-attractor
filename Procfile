@@ -1,1 +1,1 @@
-web: gunicorn unicorn-attractor.wsgi:application
+web: gunicorn unicorn_attractor.wsgi:application
