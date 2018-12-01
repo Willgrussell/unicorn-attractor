@@ -59,6 +59,9 @@ Testing has been completed across this web app using the below methods.
 - Install on CLI `dj-database-url` and `psycopg2` update requirements.txt
 - Create Procfile to allow `Heroku` know this is a django application
 
+## Demo
+- A demo of this project is [stream-three-project](https://will-unicorn-attractor.herokuapp.com/)
+
 ## Credits
 ### Contents
 * Payment Form on checkout page was copied from codeinstitute tutorial.
